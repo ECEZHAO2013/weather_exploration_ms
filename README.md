@@ -31,35 +31,17 @@ Data for this project was sourced from **[Insert Source Name, e.g., OpenWeatherM
    ```bash
    pip install pandas matplotlib seaborn plotly
 
-
 ## 🔑 How to Get a NOAA API Token
-If this project uses the NOAA Climate Data Online (CDO) API. You must request a free developer token to download the weather data.
 
-**Step 1: Request the Token**
-Go to the NOAA Token Request Page.
-Enter your Email Address and click Submit.
-Check your inbox (and spam folder) for an email from NCDC.Orders@noaa.gov.
-Copy the unique string of characters provided (this is your API Token).
-**Step 2: Securely Store the Token in Colab**
-To keep your token private when sharing this notebook on GitHub, follow these steps in Google Colab:
-Click the Key icon (🔑) in the left sidebar to open the Secrets pane.
-Click + Add new secret.
-Name the secret: NOAA_TOKEN.
-Paste your token into the Value box.
-Toggle the Notebook access switch to ON.
-**Step 3: Use the Token in Your Code**
-Access the token in your Python cells using the following snippet:
-python
-from google.colab import userdata
-import requests
+This project may use the [NOAA Climate Data Online (CDO) API](https://www.ncdc.noaa.gov).
 
-# Retrieve the secret
-noaa_token = userdata.get('NOAA_TOKEN')
+### Step 1: Request the Token
+1. Go to the [NOAA Token Request Page](https://www.ncdc.noaa.gov).
+2. Enter your **Email Address** and click **Submit**.
+3. Check your inbox for your unique **API Token**.
 
-# Use it in your headers
-headers = {'token': noaa_token}
-Use code with caution.
-
-⚠️ Security Warning
-Never hard-code your API token directly into a code cell. If you do, it will be visible to the public once you push your changes to GitHub. Always use the Colab Secrets manager or an environment file.
+### Step 2: Securely Store the Token in Colab
+1. Click the **Key icon** (🔑) in the Google Colab sidebar.
+2. Click **+ Add new secret** and name it `NOAA_TOKEN`.
+3. Paste your token into the **Value** box and toggle **Notebook access** to **ON**.
 
